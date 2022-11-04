@@ -1,0 +1,9 @@
+#Formato de nome da VPC: vpc-nome_empresa-projeto-ambiente ok
+#Criar CIDR: - OK
+#Criar 3 subnets - OK
+#Criar ACL e anexar com algumas regras - ok
+#Criar tabela de rota e anexar
+#Criar conjunto DHCP e anexar - OK
+#Habilitar resolução DNS
+#Setar VPC Padrão NÂO
+#Criar security group com algumas regras
