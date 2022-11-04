@@ -1,3 +1,5 @@
+ACTION LIST:
+
 #Formato de nome da VPC: vpc-nome_empresa-projeto-ambiente ok
 #Criar CIDR: - OK
 #Criar 3 subnets - OK
