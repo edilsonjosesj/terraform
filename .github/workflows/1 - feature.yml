@@ -28,12 +28,21 @@ jobs:
         run: echo "push recebido!"
 
       - name: Checar diretório Terraform
+        id: checar_infra
         run: |
           if [ -d infra ] && [ "$(ls -A infra)" ]; then
             echo "A pasta 'infra' NÃO está vazia."
+            echo "infra_vazia=false" >> $GITHUB_OUTPUT
           else
             echo "A pasta 'infra' está vazia ou não existe."
+            echo "infra_vazia=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Instalar Terraform
+        if: steps.checar_infra.outputs.infra_vazia == 'false'
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
 
       - name: Terraform Init
         working-directory: ./infra
